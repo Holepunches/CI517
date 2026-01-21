@@ -18,8 +18,6 @@ private:
 
 	Vector2i velocity;
 
-	std::vector<std::shared_ptr<GameKey>> gameKeys;
-
 	/* GAMEPLAY */
 
 	bool mouseLPressed = false;
