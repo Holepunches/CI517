@@ -66,9 +66,6 @@ class PhysicsObj {
 		// Verlet integration and move update
 		void updateMovement(float dt);
 
-		// black hole
-		void blackHole(PhysicsObj* other);
-
 		// Getters & Setters
 
 		SDL_Point getCenter() { return center; }

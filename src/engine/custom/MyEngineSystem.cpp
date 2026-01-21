@@ -201,21 +201,3 @@ void PhysicsObj::updateMovement(float dt) {
 	force = {};
 
 }
-
-void PhysicsObj::blackHole(PhysicsObj* other) { // Applies a force proportional to distance towards the black hole object
-	float dx = center.x - other->center.x;
-	float dy = center.y - other->center.y;
-
-	// Get Angle to black hole
-	float bangle = atan2(dy, dx);
-	bangle *= 180 / M_PI;
-	bangle += 90;
-	if (bangle < 0) bangle += 360;
-
-	// Apply force based on distance from black hole object
-	float distance = 10;
-	distance = sqrt((dx * dx) + (dy * dy));
-	distance = 1 / distance * 400;
-	other->force.x = sin(bangle * M_PI / 180) * distance * 2;
-	other->force.y = -cos(bangle * M_PI / 180) * distance * 2;
-}
