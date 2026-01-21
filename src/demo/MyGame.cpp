@@ -2,7 +2,7 @@
 
 
 
-MyGame::MyGame() : AbstractGame(), score(0), lives(3), numKeys(15), gameWon(false), box(15, 15, 30, 30)
+MyGame::MyGame() : AbstractGame()
 {
 
 	TTF_Font* font = ResourceManager::loadFont("res/fonts/arial.ttf", 28);
