@@ -57,11 +57,6 @@ void MyGame::CreateGameOjects()
 		circles[i]->setActive(false);
 		circles[i]->setID(i);
 	}
-	
-	//bHole = new PhysicsObj(start2, 32, 32, "bHole");
-	//bHole->spriteTexture = ResourceManager::loadTexture("res/images/Circle_Purple.png", SDL_COLOR_PURPLE);
-	//bHole->setID(-2);
-	//bHole->setActive(true);
 
 }
 
@@ -103,7 +98,6 @@ void MyGame::handleKeyEvents() {
 				circle->setCenter(startX, startY);
 				circle->setLastCenter(startX, startY);
 				circle->setActive(true);
-				std::cout << "\n test";
 				break;
 			}
 		}
@@ -162,7 +156,6 @@ void MyGame::render() {
 	gfx->drawTexture(background->spriteTexture, &background->srcRect, &background->destRect);
 	gfx->setDrawColor(SDL_COLOR_PURPLE);
 	gfx->drawTexture(pc->spriteTexture, &pc->srcRect, &pc->destRect);
-	//gfx->drawTexture(bHole->spriteTexture, &bHole->srcRect, &bHole->destRect);
 	gfx->setDrawColor(SDL_COLOR_GRAY);
 	for (PhysicsObj* block : blocks) {
 		gfx->drawTexture(block->spriteTexture, &block->srcRect, &block->destRect, block->getAngle(), &block->getCenter());
